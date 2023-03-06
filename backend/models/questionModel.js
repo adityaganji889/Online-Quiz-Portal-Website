@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Exam = require("./examModel")
 
 const questionSchema = new mongoose.Schema({
     name: {
@@ -20,6 +21,14 @@ const questionSchema = new mongoose.Schema({
     },
 },{
     timestamps: true
+})
+
+// remove question from the exam if the question is deleted
+questionSchema.post('remove',async function(res, next){
+    await Exam.updateOne({ _id: this.exam},{
+        $pull: {questions: this._id}
+    });
+    next();
 })
 
 const questionModel = mongoose.model("questions",questionSchema)

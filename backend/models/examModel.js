@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Question = require("./questionModel")
 
 const examSchema = new mongoose.Schema({
     name: {
@@ -28,6 +29,12 @@ const examSchema = new mongoose.Schema({
     },
 },{
     timestamps: true
+})
+
+// remove all the questions associated with an exam if that exam is deleted
+examSchema.post('remove',async function(res, next){
+    await Question.deleteMany({exam: this._id});
+    next();
 })
 
 const examModel = mongoose.model("exams", examSchema)

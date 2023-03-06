@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const Report = require("./reportModel")
 
 const userSchema = new mongoose.Schema({
    name: {
@@ -21,6 +22,12 @@ const userSchema = new mongoose.Schema({
    },
 },{
     timestamps: true
+})
+
+// Delete reports of the user when a user is deleted
+userSchema.post('remove',async function(res, next){
+    await Report.deleteMany({user: this._id});
+    next();
 })
 
 const userModel = mongoose.model("users",userSchema)
