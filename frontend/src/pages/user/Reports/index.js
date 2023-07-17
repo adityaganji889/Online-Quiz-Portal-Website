@@ -76,7 +76,7 @@ function ReportsPage() {
     <div>
       <PageTitle title="Reports"/>
       <div className='divider'></div>
-      <Table columns={columns} className="mt-2" dataSource={reportsData}/>
+      <Table columns={columns} className="mt-2" dataSource={reportsData} scroll={{ x: 992 }}/>
     </div>
   )
 }

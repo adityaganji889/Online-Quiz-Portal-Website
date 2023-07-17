@@ -40,7 +40,7 @@ function HomePage() {
       <Row gutter={[16,16]} className="mt-2">
         {exams&&exams.map((exam,index)=>{
            return (
-            <Col span={6} key={index}>
+            <Col span={6} sm={{span: 12}} key={index}>
               <div className='card-lg flex flex-col gap-1 p-2'>
                 <h1 className='text-2xl'>
                   {exam.name}

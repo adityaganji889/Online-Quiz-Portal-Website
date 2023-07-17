@@ -107,7 +107,7 @@ function AdminReportsPage() {
             Search
         </button>
       </div>
-      <Table columns={columns} className="mt-2" dataSource={reportsData}/>
+      <Table columns={columns} className="mt-2" dataSource={reportsData} scroll={{ x: 992 }}/>
     </div>
   )
 }
