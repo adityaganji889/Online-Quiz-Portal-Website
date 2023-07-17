@@ -128,17 +128,17 @@ function AddEditExam() {
         <Tabs defaultActiveKey="1">
           <Tabs.TabPane tab="Exam Details" key="1">
           <Row gutter={[10,10]}>
-                <Col span={8}>
+                <Col md={{span:8}} sm={{span: 24}} >
                    <Form.Item label="Exam Name" name="name">
                     <input type="text"/>
                    </Form.Item>
                 </Col>
-                <Col span={8}>
+                <Col md={{span:8}} sm={{span: 24}} >
                    <Form.Item label="Exam Duration" name="duration">
                     <input type="number" min={0}/>
                    </Form.Item>
                 </Col>
-                <Col span={8}>
+                <Col md={{span:8}} sm={{span: 24}} >
                    <Form.Item label="Category" name="category">
                     <select>
                     <option value="JavaScript">JavaScript</option>
@@ -148,12 +148,12 @@ function AddEditExam() {
                     </select>
                    </Form.Item>
                 </Col>
-                <Col span={8}>
+                <Col md={{span:8}} sm={{span: 24}} >
                    <Form.Item label="Total Marks" name="totalMarks">
                     <input type="number" min={0}/>
                    </Form.Item>
                 </Col>
-                <Col span={8}>
+                <Col md={{span:8}} sm={{span: 24}} >
                    <Form.Item label="Passing Marks" name="passingMarks">
                     <input type="number" min={0}/>
                    </Form.Item>
