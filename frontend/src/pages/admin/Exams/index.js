@@ -24,6 +24,10 @@ function ExamsPage() {
       dataIndex: "category"
     },
     {
+      title: "Marks Per Question",
+      dataIndex: "marksPerQuestion"
+    },
+    {
       title: "Total Marks",
       dataIndex: "totalMarks"
     },

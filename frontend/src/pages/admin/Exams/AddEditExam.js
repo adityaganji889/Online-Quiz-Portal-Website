@@ -134,7 +134,7 @@ function AddEditExam() {
                    </Form.Item>
                 </Col>
                 <Col md={{span:8}} sm={{span: 24}} >
-                   <Form.Item label="Exam Duration" name="duration">
+                   <Form.Item label="Exam Duration (In Mins)" name="duration">
                     <input type="number" min={0}/>
                    </Form.Item>
                 </Col>
@@ -149,8 +149,13 @@ function AddEditExam() {
                    </Form.Item>
                 </Col>
                 <Col md={{span:8}} sm={{span: 24}} >
-                   <Form.Item label="Total Marks" name="totalMarks">
+                   <Form.Item label="Marks Per Question" name="marksPerQuestion">
                     <input type="number" min={0}/>
+                   </Form.Item>
+                </Col>
+                <Col md={{span:8}} sm={{span: 24}} >
+                   <Form.Item label="Total Marks" name="totalMarks">
+                    <input type="number" min={0} disabled={true}/>
                    </Form.Item>
                 </Col>
                 <Col md={{span:8}} sm={{span: 24}} >
@@ -178,7 +183,7 @@ function AddEditExam() {
                setShowAddEditQuestionModal(true)
               }}>Add Question</button>
               </div>
-              <Table columns={questionColumns} dataSource={examData?.questions} className="mt-1">
+              <Table columns={questionColumns} dataSource={examData?.questions} pagination={{ defaultPageSize: 3 }} className="mt-1">
 
               </Table>
           </Tabs.TabPane>}

@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import PageTitle from '../../../components/PageTitle'
-import {Table, message} from 'antd'
+import { Table, message } from 'antd'
 import { HideLoading, ShowLoading } from '../../../redux/loaderSlice'
 import { useDispatch } from 'react-redux'
-import { getAllAttempts, getAllAttemptsByUser } from '../../../apicalls/reports'
+import { getAllAttempts } from '../../../apicalls/reports'
 import moment from 'moment'
 
 function AdminReportsPage() {
@@ -24,7 +24,7 @@ function AdminReportsPage() {
        title: "Date",
        dataIndex: "date",
        render: (text,record) => 
-        <>{moment(record.createdAt).format("DD-MM-YYYY hh:mm:ss")}</>
+        <>{moment(record.createdAt).format("DD/MM/YYYY hh:mm:ss A")}</>
        
     },
     {
@@ -52,7 +52,7 @@ function AdminReportsPage() {
       title: "Obtained Marks",
       dataIndex: "obtainedMarks",
       render: (text,record) => 
-        <>{record.result.correctAnswers.length}</>
+        <>{record.result.correctAnswers.length*record.exam.marksPerQuestion}</>
        
     },
     {

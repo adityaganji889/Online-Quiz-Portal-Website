@@ -11,7 +11,9 @@ const reportRoute = require("./routes/reportRoutes")
 const port = process.env.PORT || 5000
 
 // app.use(cors())
-app.use(express.json())
+app.use(express.json({
+    limit: "50mb",
+}));
 
 app.use("/api/users",userRoute)
 app.use("/api/exams",examRoute)

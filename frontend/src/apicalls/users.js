@@ -29,3 +29,35 @@ export const getUserInfo = async() => {
     return error.response.data
   }
 }
+
+export const sendPasswordResetLink = async(payload) => {
+  try{
+    const response = await axiosInstance.post('/api/users/send-password-reset-link',payload);
+    return response.data
+  }
+  catch(error){
+    return error.response.data
+  }
+}
+
+
+export const resetPassword = async(payload) => {
+  try{
+    const response = await axiosInstance.post('/api/users/reset-password',payload);
+    return response.data
+  }
+  catch(error){
+    return error.response.data
+  }
+}
+
+
+export const updateUserInfo = async(payload) => {
+  try{
+    const response = await axiosInstance.put('/api/users/update-user-info',payload)
+    return response.data
+  }
+  catch(error){
+    return error.response.data
+  }
+}

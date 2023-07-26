@@ -8,7 +8,7 @@ router.get('/getExamById/:id',authMiddleware,getExamById)
 router.put('/editExam/:id',authMiddleware,editExam)
 router.delete('/deleteExam/:id',authMiddleware,deleteExam)
 router.post('/addQuestionToExam/:id',authMiddleware,addQuestionToExam)
-router.delete('/deleteQuestionFromExam/:id',authMiddleware,deleteQuestionFromExam)
+router.post('/deleteQuestionFromExam/:id',authMiddleware,deleteQuestionFromExam)
 router.put('/editQuestionInExam/:id',authMiddleware,editQuestionInExam)
 
 module.exports = router;

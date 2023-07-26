@@ -27,6 +27,10 @@ const examSchema = new mongoose.Schema({
         required: true,
         ref: "questions"  
     },
+    marksPerQuestion: {
+        type: Number,
+        required: true
+    }
 },{
     timestamps: true
 })

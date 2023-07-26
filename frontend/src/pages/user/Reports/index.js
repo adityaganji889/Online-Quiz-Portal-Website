@@ -40,7 +40,7 @@ function ReportsPage() {
       title: "Obtained Marks",
       dataIndex: "obtainedMarks",
       render: (text,record) => 
-        <>{record.result.correctAnswers.length}</>
+        <>{record.result.correctAnswers.length*record.exam.marksPerQuestion}</>
        
     },
     {

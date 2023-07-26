@@ -72,7 +72,7 @@ export const editQuestionInExam = async(payload,id) => {
 
 export const deleteQuestionFromExam = async(id,payload) => {
     try{
-        const response = await axiosInstance.delete(`/api/exams/deleteQuestionFromExam/${id}`,payload)
+        const response = await axiosInstance.post(`/api/exams/deleteQuestionFromExam/${id}`,payload)
         return response.data
     }
     catch(error){

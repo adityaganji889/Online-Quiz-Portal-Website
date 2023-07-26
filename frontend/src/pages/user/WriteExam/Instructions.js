@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Instructions(props) {
-  const {examData,setExamData, view, setView, startTimer} = props
+  const {examData,setView, startTimer} = props
   const navigate = useNavigate();
   return (
     <div className='flex flex-col items-center mt-2 gap-5'>
@@ -11,10 +11,10 @@ function Instructions(props) {
         </h1>
         <ul className='flex flex-col gap-1'>
           <li>
-            Exam must be completed in {examData.duration} minutes.
+            Exam must be completed in {examData.duration} minutes ({examData.duration*60} seconds).
           </li>
           <li>
-            Exam will be submitted automatically after {examData.duration} minutes.
+            Exam will be submitted automatically after {examData.duration} minutes ({examData.duration*60} seconds).
           </li>
           <li>
             Once submitted, you cannot change your answer.

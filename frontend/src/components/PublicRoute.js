@@ -5,11 +5,11 @@ function PublicRoute({children}) {
   const navigate = useNavigate();
   useEffect(()=>{
    if(localStorage.getItem('token')){
-    navigate('/');
+    navigate('/home');
    }
   },[])
   return (
-    <div>
+    <div className='bg-primary1 h-screen w-screen'>
         {children}
     </div>
   )

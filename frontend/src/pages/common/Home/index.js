@@ -62,10 +62,13 @@ function HomePage() {
                 <h1 className='text-md'>
                   Duration: {exam.duration}
                 </h1>
-                <button className='primary-outlined-btn cursor-pointer'
+                {exam.questions.length!==0&&<button className='primary-outlined-btn cursor-pointer'
                 onClick={()=>navigate(`/user/write-exam/${exam._id}`)}>
                   Start Exam
-                </button>
+                </button>}
+                {exam.questions.length===0&&<button className='primary-contained-btn cursor-pointer'>
+                  In Progress
+                </button>}
               </div>
             </Col>
            )

@@ -56,7 +56,7 @@ const calculateResult = async() => {
       }
     })
     let verdict = "Pass";
-    if(correctAnswers.length<examData.passingMarks){
+    if(correctAnswers.length*examData.marksPerQuestion<examData.passingMarks){
       verdict = "Fail";
     }
     const tempResult = {
@@ -85,7 +85,7 @@ const calculateResult = async() => {
   }
 }
 const startTimer = () => {
-   let totalSeconds = examData.duration;
+   let totalSeconds = examData.duration*60;
    const intervalId = setInterval(()=>{
       if(totalSeconds>0){
         totalSeconds=totalSeconds-1;
@@ -181,10 +181,10 @@ useEffect(()=>{
            Passing Marks : {examData.passingMarks}
         </h1>
         <h1 className='text-md'>
-            Obtained Marks : {result.correctAnswers.length}
+            Obtained Marks : {result.correctAnswers.length*examData.marksPerQuestion}
         </h1>
         <h1 className='text-md'>
-            Wrong Answers : {result.wrongAnswers.length}
+            Wrong Answers : {result.wrongAnswers.length*examData.marksPerQuestion}
         </h1>
         <h1 className='text-md'>
             Verdict : {result.verdict}

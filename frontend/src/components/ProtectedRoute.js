@@ -16,9 +16,9 @@ function ProtectedRoute({children}) {
   const userMenu = [
     {
       title: "Home",
-      paths: ["/","/user/write-exam/:id"],
+      paths: ["/home","/user/write-exam/:id"],
       icon: <i className="ri-home-line"></i>,
-      onClick: () => navigate("/")
+      onClick: () => navigate("/home")
     },
     {
       title: "Reports",
@@ -26,12 +26,12 @@ function ProtectedRoute({children}) {
       icon: <i className="ri-bar-chart-line"></i>,
       onClick: ()=>navigate("/user/reports")
     },
-    // {
-    //   title: "Profile",
-    //   paths: ["/profile"],
-    //   icon: <i className='ri-user-line'></i>,
-    //   onClick: ()=>navigate("/profile")
-    // },
+    {
+      title: "Profile",
+      paths: ["/profile"],
+      icon: <i className='ri-user-line'></i>,
+      onClick: ()=>navigate("/profile")
+    },
     {
       title: "Logout",
       paths: ["/logout"],
@@ -45,9 +45,9 @@ function ProtectedRoute({children}) {
   const adminMenu = [
     {
       title: "Home",
-      paths: ["/","/user/write-exam/:id"],
+      paths: ["/home","/user/write-exam/:id"],
       icon: <i className="ri-home-line"></i>,
-      onClick: () => navigate("/")
+      onClick: () => navigate("/home")
     },
     {
       title: "Exams",
@@ -61,19 +61,20 @@ function ProtectedRoute({children}) {
       icon: <i className="ri-bar-chart-line"></i>,
       onClick: ()=>navigate("/admin/reports")
     },
-    // {
-    //   title: "Profile",
-    //   paths: ["/profile"],
-    //   icon: <i className='ri-user-line'></i>,
-    //   onClick: ()=>navigate("/profile")
-    // },
+    {
+      title: "Profile",
+      paths: ["/profile"],
+      icon: <i className='ri-user-line'></i>,
+      onClick: ()=>navigate("/profile")
+    },
     {
       title: "Logout",
       paths: ["/logout"],
       icon: <i className='ri-logout-box-line'></i>,
       onClick: ()=>{
         localStorage.removeItem("token")
-        navigate("/login");
+        message.success("Your are logged out successfully")
+        navigate("/");
       }
     }
   ]
@@ -129,7 +130,7 @@ function ProtectedRoute({children}) {
   }
   return (
     user && <div className='layout'>
-     <div className='flex gap-2 h-100'>
+     <div className='flex gap-2 h-screen'>
        <div className='sidebar'>
          <div className='menu'>
             {menu.map((item,index)=>{

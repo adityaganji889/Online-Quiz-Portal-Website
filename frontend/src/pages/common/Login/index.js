@@ -1,5 +1,5 @@
 import React from 'react'
-import {Form, message} from 'antd'
+import { Form, message } from 'antd'
 import { Link, useNavigate } from 'react-router-dom'
 import { loginUser } from '../../../apicalls/users'
 import { useDispatch } from 'react-redux'
@@ -7,7 +7,6 @@ import { HideLoading, ShowLoading } from '../../../redux/loaderSlice'
 
 function LoginPage() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const onFinish = async(values) => {
     try{
       dispatch(ShowLoading())
@@ -16,7 +15,7 @@ function LoginPage() {
       if(response.success){
         message.success(response.message);
         localStorage.setItem("token",response.data)
-        window.location.href="/";
+        window.location.href="/home";
       }
       else{
         message.error(response.message)
@@ -28,8 +27,8 @@ function LoginPage() {
     }
   }
   return (
-    <div className='flex justify-center items-center h-screen w-screen bg-primary'>
-     <div className='card w-400 p-3 bg-white'>
+    <div className='flex justify-center items-center h-screen w-screen bg-primary1'>
+     <div className='card w-400 p-3 bg-white' data-aos="fade-down">
        <div className='flex flex-col'>
        <h1 className='text-2xl'>
         Quiz-Portal Login  <i className='ri-login-circle-line'></i>
@@ -46,6 +45,9 @@ function LoginPage() {
         <button type="submit" className='primary-contained-btn mt-2 w-100'>Login</button>
         <Link to="/register">
           Don't have an account? Register Here
+        </Link>
+        <Link to="/resetPasswordLink">
+          Forgot Password?
         </Link>
         </div>
        </Form>

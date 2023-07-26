@@ -95,12 +95,13 @@ const editExam = async(req,res) => {
   try{
      const user = await User.findOne({_id: req.body.userid})
      if(user.isAdmin){
-      const exam = await Exam.findOne({_id: req.params.id})
+      const exam = await Exam.findOne({_id: req.params.id});
       if(exam){
         exam.name = req.body.name;
         exam.duration = req.body.duration;
         exam.category = req.body.category;
-        exam.totalMarks = req.body.totalMarks;
+        exam.marksPerQuestion = req.body.marksPerQuestion;
+        exam.totalMarks = req.body.marksPerQuestion*exam.questions.length;
         exam.passingMarks = req.body.passingMarks;
         exam.save()
         res.send({
@@ -182,6 +183,7 @@ const addQuestionToExam = async(req,res) => {
         // add question to exam
         const exam = await Exam.findOne({_id: req.params.id})
         exam.questions.push(question._id);
+        exam.totalMarks += exam.marksPerQuestion;
         await exam.save();
         res.send({
           message: "Question added successfully.",
@@ -239,7 +241,7 @@ const deleteQuestionFromExam = async(req,res) => {
     if(user.isAdmin){
       // delete question from the questions collection 
       const question = await Question.findOne({ _id: req.body.questionId});
-      await question.delete()
+      await Question.deleteOne({ _id: question._id })
       // delete question in exam
       const exam = await Exam.findOne({_id: req.params.id})
       const questions = exam.questions
@@ -248,6 +250,7 @@ const deleteQuestionFromExam = async(req,res) => {
           return question._id!=req.body.questionId
         }
       })
+      exam.totalMarks -= exam.marksPerQuestion;
       await exam.save()
        res.send({
         message: "Selected question deleted successfully",
