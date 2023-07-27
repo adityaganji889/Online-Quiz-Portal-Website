@@ -58,7 +58,7 @@ function ResetPasswordLink() {
                 </Form.Item>
                 <div className='d-flex justify-content-between align-items-center' data-aos="fade-up">
                   <Link to="/login">Already have an account, Click here to Login</Link>
-                  <button className='primary btn btn-secondary' type="submit">Send Link</button>
+                  <button className='primary btn btn-secondary' type="submit">Send</button>
                 </div>
             </Form>
         </Col>

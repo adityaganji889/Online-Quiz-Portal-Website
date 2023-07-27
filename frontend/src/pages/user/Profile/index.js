@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
 import { updateUserInfo } from '../../../apicalls/users';
 import { HideLoading, ShowLoading } from '../../../redux/loaderSlice';
 import { useNavigate } from 'react-router-dom';
 import { SetUser } from '../../../redux/usersSlice';
+
 
 function Profile(props) {
   const navigate = useNavigate()
@@ -55,7 +56,7 @@ function Profile(props) {
         <hr/>
         <div>
         {user.profilePicture&&<div className='mb-3'>
-        <center><img src={image} alt="Profile Pic" width="10%" height="10%"/></center>
+        <center><img src={image} alt="Profile Pic" width="15%" height="15%"/></center>
         </div>}
         <div className="mb-2">
                   <label
@@ -123,14 +124,14 @@ function Profile(props) {
                   />
                 </div>
         </div>
-        <div className='d-flex justify-content-end gap-2'>
-          <Button variant="secondary" onClick={()=>{
+        <div className='d-flex justify-content-start gap-2 mt-2'>
+         <Button variant="secondary" onClick={()=>{
             navigate(-1)
           }}>
             Back
           </Button>
-          <Button variant="primary" onClick={updateProfile}>
-            Save Changes
+         <Button variant="primary" onClick={updateProfile}>
+            Save
           </Button>
         </div>
       </Row>

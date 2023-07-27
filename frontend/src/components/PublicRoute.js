@@ -9,7 +9,7 @@ function PublicRoute({children}) {
    }
   },[])
   return (
-    <div className='bg-primary1 h-100 w-screen'>
+    <div className='register h-screen w-screen'>
         {children}
     </div>
   )

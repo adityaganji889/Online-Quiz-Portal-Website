@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 function LandingPage() {
   return (
-    <Container fluid={true} className='register h-screen w-screen'>
+    <Container fluid={true} className='register'>
        <Row className='d-flex justify-content-center align-items-center mx-5 pt-5 gx-5'>
         <Col md={6} className='d-flex align-items-center'  data-aos="fade-right">
             <div className='d-flex flex-column justify-content-center align-items-center gx-5'>
