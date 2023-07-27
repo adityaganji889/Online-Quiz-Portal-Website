@@ -139,9 +139,10 @@ const deleteExam = async(req,res) => {
   try{
      const user = await User.findOne({_id: req.body.userid})
      if(user.isAdmin){
-      const exam = await Exam.findOne({_id: req.params.id})
-      if(exam){
-        exam.delete()
+      const exam1 = await Exam.findOne({_id: req.params.id})
+      if(exam1){
+        await Question.deleteMany({ exam: req.params.id})
+        await Exam.deleteOne({_id: exam1._id})
         res.send({
           message: "Selected exam deleted successfully.",
           data: null,
