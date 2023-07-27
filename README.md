@@ -33,5 +33,8 @@ Online quizzes are a good method to gauge your knowledge. Numerous websites prov
 https://online-quiz-portal-website.onrender.com
 
 ## Demonstration:
-https://user-images.githubusercontent.com/88584574/223217847-2e5047ed-9901-4236-b956-24d542163e2c.mp4
+
+https://github.com/adityaganji889/Online-Quiz-Portal-Website/assets/88584574/c906b95c-ff2c-4f9f-9a30-1ebb5b78bf03
+
+
 
