@@ -169,7 +169,7 @@ useEffect(()=>{
      </div>
     </div>}
     {view==="result"&&<div className='flex justify-center mt-2 gap-2'>
-      <div className='flex flex-col gap-2 result'>
+      <div className='flex flex-col gap-2 result text-dark'>
       <h1 className='text-2xl'>
         Result
       </h1>

@@ -96,7 +96,7 @@ function ExamsPage() {
        </button>
     </div>
     <div className='divider mt-1'></div>
-    <Table columns={columns} dataSource={exams} scroll={{ x: 992 }}/>
+    <Table columns={columns} dataSource={exams} scroll={{ x: 992 }} />
     </>
   )
 }

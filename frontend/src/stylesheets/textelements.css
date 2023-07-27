@@ -3,6 +3,10 @@
     line-height: 2rem;
 }
 
+.text-dark{
+    color: black !important;
+}
+
 .text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem; 
