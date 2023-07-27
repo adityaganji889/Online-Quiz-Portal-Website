@@ -14,8 +14,7 @@ Online quizzes are a good method to gauge your knowledge. Numerous websites prov
 * Separate Reports / Analytics functionality for both Admin and User.
 
 ## Backend Schema Diagram:
-![image](https://github.com/adityaganji889/Online-Quiz-Portal-Website/assets/88584574/7bc04d66-add5-4716-b6b3-1fc7971bfca1)
-
+![image](https://github.com/adityaganji889/Online-Quiz-Portal-Website/assets/88584574/d79b4963-faca-4200-8369-6465f41438fb)
 
 ## Tech Stack Used:
 #### Front-End:
