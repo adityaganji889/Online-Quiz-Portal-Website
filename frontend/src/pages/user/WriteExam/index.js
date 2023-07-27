@@ -236,7 +236,7 @@ useEffect(()=>{
           Retake Exam
           </button>
           <button className='primary-contained-btn' onClick={()=>{
-            navigate("/")
+            navigate("/home")
           }}>
             Close
           </button>
