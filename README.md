@@ -13,6 +13,10 @@ Online quizzes are a good method to gauge your knowledge. Numerous websites prov
 * Live Result Functionality after writing the exams.
 * Separate Reports / Analytics functionality for both Admin and User.
 
+## Backend Schema Diagram:
+![image](https://github.com/adityaganji889/Online-Quiz-Portal-Website/assets/88584574/7bc04d66-add5-4716-b6b3-1fc7971bfca1)
+
+
 ## Tech Stack Used:
 #### Front-End:
 <img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="Redux" src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"/> <img src="https://img.shields.io/badge/Ant%20Design-0170FE?logo=antdesign&logoColor=fff&style=for-the-badge" alt="Ant Design Badge"> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/>
